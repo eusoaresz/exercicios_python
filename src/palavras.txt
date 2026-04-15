@@ -1,0 +1,96 @@
+Computador; maquina usada para programar e navegar
+Teclados; periferico de digitacao
+Internet; rede mundial de computadores
+Programar; criar codigos
+Algoritmo; sequencia logica de passos
+Variavel; armazena valores no codigo
+Condicional; estrutura de decisao
+Repeticao; estrutura de loop
+Software; conjunto de programas
+Hardware; parte fisica do computador
+Desenvolver; criar sistemas
+Linguagem; meio de comunicacao do codigo
+Navegador; usado para acessar sites
+Servidor; fornece servicos na rede
+Aplicativo; programa de celular
+Seguranca; protecao de dados
+Criptografia; tecnica de protecao de informacao
+BancoDados; armazena informacoes
+Interface; interacao com usuario
+Processador; cerebro do computador
+MemoriaRam; armazenamento temporario
+Armazenar; guardar informacoes
+Documento; arquivo de texto
+Planilha; usada para calculos
+Apresentar; exibir informacoes
+Conexao; ligacao de rede
+Roteador; distribui internet
+Download; baixar arquivos
+Uploading; enviar arquivos
+Digitalizar; converter para digital
+Impressora; imprime documentos
+Resolucao; qualidade de imagem
+Multimidia; varios tipos de midia
+Animacao; movimento grafico
+Editores; programas de edicao
+Compilador; traduz codigo
+Interpretar; executar codigo
+Debugging; corrigir erros
+Framework; base para desenvolvimento
+Biblioteca; conjunto de funcoes
+Sintaxe; regras da linguagem
+Parametro; valor passado na funcao
+Retornar; devolver resultado
+Funcional; relacionado a funcao
+Objeto; instancia de classe
+Heranca; conceito de orientacao a objetos
+Polimorfismo; varias formas de metodo
+Encapsular; proteger dados
+Abstracao; simplificar conceitos
+Modularizar; dividir em partes
+Responsivo; adapta ao tamanho da tela
+Frontend; parte visual do sistema
+Backend; parte logica do sistema
+Fullstack; trabalha em ambos
+Usabilidade; facilidade de uso
+Experiencia; interacao do usuario
+Plataforma; ambiente de execucao
+Sistemaweb; sistema online
+Mobileapp; aplicativo movel
+Seguridade; protecao geral
+Autenticacao; validar usuario
+Autorizacao; permissao de acesso
+Criptografar; proteger dados
+Desempenho; eficiencia do sistema
+Otimizar; melhorar desempenho
+Escalavel; cresce com demanda
+Monitorar; acompanhar sistema
+LogarSistema; registrar eventos
+Protocolo; regra de comunicacao
+Enderecar; localizar recurso
+Navegacao; movimentar em sistema
+Persistir; manter dados
+Serializar; converter dados
+Deserializar; restaurar dados
+Conectividade; capacidade de conexao
+Virtualizar; criar ambiente virtual
+Container; ambiente isolado
+Orquestrar; gerenciar containers
+Deployar; publicar sistema
+Integracao; unir sistemas
+Automatizar; fazer automaticamente
+PipelineCI; fluxo de integracao
+Versionar; controlar versoes
+Repositorio; armazena codigo
+Colaborar; trabalhar em equipe
+Documentar; explicar sistema
+TestesUnit; testes de unidades
+TestesAuto; testes automaticos
+Qualidade; nivel do produto
+Padronizar; seguir padroes
+Arquitetura; estrutura do sistema
+Microservicos; sistema dividido
+Monolitico; sistema unico
+Distribuido; espalhado em varios
+Latencia; tempo de resposta
+Throughput; taxa de processamento
