@@ -1,75 +1,89 @@
 import csv
+from pathlib import Path
 
-#lista (vetor) de dicionarios (objetos) com os passageiros do Titanic
 titanic = []
 
-#le os dados do arquivo e atribui para a lista (titanic)
-with open("titanic/train.csv") as arq:
-    dados = csv.DictReader(arq)
-    for linha in dados:
-        titanic.append(linha)
+arquivo = Path(__file__).with_name("train.csv")
+with arquivo.open(mode="r") as arq:
+  dados_csv = csv.DictReader(arq)
+  for linha in dados_csv:
+    titanic.append(linha)
 
 # print(titanic[0])
 # print(titanic[0]['Name'])
 
-def titulo(texto, traco="-"):
-    print()
-    print(texto.upper())
-    print(traco*40)
+def titulo(texto):
+  print()
+  print(texto)
+  print("-"*40)
 
-def compara_sexo():
-    titulo("Compara Passageiros por Sexo x Sobreviventes")
-    # Masculino: xxx
-    # - Sobreviventes: xxx
-    # - Mortos: xxx
+def analise_sexo():
+  titulo("Análise por Sexo")
 
-    with open("titanic/train.csv") as arq:
-        dados = csv.DictReader(arq)
-        masculino = 0
-        feminino = 0
-        survived = 0
-        for linha in dados:
-            if linha['Sex'] == 'male':
-                masculino += 1
-            else:
-                feminino += 1
-            if masculino == 0 and linha['Survived'] == '1':
-                survived += 1
+  masc = 0
+  fem = 0
 
-    print(f"Masculino: {masculino}")
-    print(f"Feminino: {feminino}")
-    print(f"Sobreviventes: {survived}")
+  for pessoa in titanic:
+    if pessoa['Sex'] == "male":
+      masc += 1
+    elif pessoa['Sex'] == "female":
+      fem += 1
+  
+  # ----- outra forma (list comprehension)
+  masc_sobre = len([pessoa for pessoa in titanic 
+                if pessoa['Sex'] == "male" and pessoa['Survived'] == '1'])
+  fem_sobre = len([pessoa for pessoa in titanic 
+               if pessoa['Sex'] == "female" and pessoa['Survived'] == '1'])
 
-def media_idosos():
-    titulo("Média de Idade e Top 10 Idosos")
-    # Media de de idade dos passageiros: xxx
-    # Top 10+ idosos:
-    # 1. Nome - Idade
-    # 2. Nome - Idade
-    # ...
+  print(f"Homens: {masc}")
+  print(f" - Sobreviventes: {masc_sobre}")
+  print(f" - Mortos: {masc-masc_sobre}")
+  print()
+  print(f"Mulheres: {fem}")
+  print(f" - Sobreviventes: {fem_sobre}")
+  print(f" - Mortos: {fem - fem_sobre}")
 
-def compara_classe():
-    titulo("Comparação dos Passageiros Classe x Sobreviventes")
-    # 1° Classe: xxx
-    # - Sobreviventes: xxx
-    # - Mortos: xxx
+def top10_idosos():
+  titulo("Passageiros mais idosos - Top 10")
 
-    # 2° Classe: xxx
-    # - Sobreviventes: xxx
-    # - Mortos: xxx
+  titanic_temp = [x for x in titanic if x['Age'] != '']
+  titanic2 = sorted(titanic_temp, key=lambda pessoa: float(pessoa['Age']), 
+                    reverse=True)
 
-    # 3° Classe: xxx
-    # - Sobreviventes: xxx
-    # - Mortos: xxx
+  print("Nº Nome do Passageiro...............................: Idade Sobrevivente")
+  
+  # for x, pessoa in enumerate(titanic2, start=1):
+  #   print(f"{x:2d} {pessoa['Name']:50s} {pessoa['Age']:5s} {'Sim' if pessoa['Survived'] == '1' else 'Não'}")
+  #   if x == 10:
+  #     break
+
+  for x, pessoa in enumerate(titanic2[0:10], start=1):
+    print(f"{x:2d} {pessoa['Name']:50s} {pessoa['Age']:5s} {'Sim' if pessoa['Survived'] == '1' else 'Não'}")
+  
+  # Cálculo da média
+  soma = sum([float(pessoa['Age']) for pessoa in titanic2])
+  num = len(titanic2)
+  
+  print()
+  print("-"*40)
+  print(f"Média das Idades: {soma/num:.1f}")
+  print("-"*40)
+
+def analise_classe():
+  pass
 
 while True:
-    titulo("Passageiros do Titanic", "=")
-    print("1. comparação por Sexo e Sobreviventes")
-    print("2. Média de Idade e Top 10 +Idosos")
-    print("3. Comparção por Classe e Sobreviventes")
-    print("4. Finalizar")
-    opcao = int(input("Opção: "))
-    if opcao == 1:
-        compara_sexo()
-    else:
-        break
+  titulo("Passageiros do Titanic: Exemplos de Análises")
+  print("1. Análise por Sexo")
+  print("2. Top 10 + idosos e Média")
+  print("3. Análise por Classe")
+  print("4. Finalizar")
+  opcao = int(input("Opção: "))
+  if opcao == 1:
+    analise_sexo()
+  elif opcao == 2:
+    top10_idosos()
+  elif opcao == 3:
+    analise_classe()
+  else:
+    break
