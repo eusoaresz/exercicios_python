@@ -3,8 +3,8 @@ from pathlib import Path
 
 titanic = []
 
-arquivo = Path(__file__).with_name("train.csv")
-with arquivo.open(mode="r") as arq:
+data_path = Path(__file__).resolve().parent / "train.csv"
+with open(data_path, mode="r", encoding="utf-8") as arq:
   dados_csv = csv.DictReader(arq)
   for linha in dados_csv:
     titanic.append(linha)
