@@ -63,3 +63,33 @@ Se estiver usando ambiente virtual (opcional), ative antes de executar.
 - Os programas são independentes: execute um arquivo por vez.
 - Alguns jogos usam emojis e limpeza de tela no terminal para melhorar a visualização.
 - Se `colorama` aparecer sublinhado no editor, selecione no VS Code o mesmo interpretador Python do ambiente virtual ativo.
+
+## Ambientes e erros comuns
+
+- Ambientes virtuais: recomendo usar um `venv` por projeto. Para criar e ativar no PowerShell:
+
+```powershell
+python -m venv .venv
+.\\.venv\\Scripts\\Activate.ps1
+```
+
+- `ModuleNotFoundError: No module named 'colorama'`: instale no venv ativo:
+
+```powershell
+python -m pip install colorama
+```
+
+- Se o editor (Pylance) sublinhar uma importação, confirme que o VS Code está usando o mesmo Python do terminal: `Python: Select Interpreter`.
+
+- `gitmoji` (CLI): o pacote correto é `gitmoji-cli`. Instale com `npm install -g gitmoji-cli`. Se o comando não for encontrado no terminal, adicione a pasta de binários do npm global ao `PATH` (Windows):
+
+```powershell
+setx PATH "$($env:PATH);$env:APPDATA\\npm"
+```
+
+- Caminho de arquivos (ex.: `palavras.txt`, `train.csv`): os scripts foram atualizados para localizar arquivos relative ao próprio arquivo (usa `Path(__file__)`). Ainda assim, rode os scripts a partir da raiz do projeto:
+
+```powershell
+python src/jogo.py
+python src/titanic/titanic.py
+```

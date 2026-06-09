@@ -1,0 +1,36 @@
+{
+  "selecoes": [
+    {
+      "id": 1,
+      "nome": "Brasil",
+      "continente": "América do Sul",
+      "numCopas": 5,
+      "destaques": "Vinicius JR, Raphinha, Endrick",
+      "chanceTitulo": 10
+    },
+    {
+      "id": 2,
+      "nome": "França",
+      "continente": "Europa",
+      "numCopas": 2,
+      "destaques": "Mbappé, Dembélé",
+      "chanceTitulo": 15
+    },
+    {
+      "nome": "Portugal",
+      "continente": "Europa",
+      "numCopas": 1,
+      "destaques": "Cristiano Ronaldo, Pepe",
+      "chanceTitulo": 10,
+      "id": 3
+    },
+    {
+      "nome": "Espanha",
+      "continente": "Europa",
+      "numCopas": 1,
+      "destaques": "Lamine Yamal, Rodri, Pedri",
+      "chanceTitulo": 20,
+      "id": 4
+    }
+  ]
+}
